@@ -1689,6 +1689,7 @@ GameObject:
   - component: {fileID: 790743669}
   - component: {fileID: 790743671}
   - component: {fileID: 790743670}
+  - component: {fileID: 790743672}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -1757,6 +1758,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 790743668}
   m_CullTransparentMesh: 1
+--- !u!114 &790743672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790743668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce3d58bef19b600438e23077e5b6ebf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &800829574
 GameObject:
   m_ObjectHideFlags: 0
@@ -2124,6 +2137,7 @@ GameObject:
   - component: {fileID: 958507901}
   - component: {fileID: 958507903}
   - component: {fileID: 958507902}
+  - component: {fileID: 958507904}
   m_Layer: 0
   m_Name: level
   m_TagString: Untagged
@@ -2164,7 +2178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.26666668, g: 0.39607844, b: 0.46666667, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2192,6 +2206,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958507900}
   m_CullTransparentMesh: 1
+--- !u!114 &958507904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958507900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68a345038b8737a40924a965831adb06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &974719724
 GameObject:
   m_ObjectHideFlags: 0

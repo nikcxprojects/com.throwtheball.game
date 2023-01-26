@@ -1,18 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class StatsUtility : MonoBehaviour
+public static class StatsUtility
 {
-    // Start is called before the first frame update
-    void Start()
+    public static int Score
     {
-        
+        get => PlayerPrefs.GetInt("score", 0);
+        set => PlayerPrefs.SetInt("score", value);
     }
 
-    // Update is called once per frame
-    void Update()
+    public static int BestScore
     {
-        
+        get => PlayerPrefs.GetInt("bestscore", 0);
+        set
+        {
+            if(value > Score)
+            {
+                PlayerPrefs.SetInt("bestscore", value);
+            }
+        }
+    }
+
+    public static int Level
+    {
+        get => PlayerPrefs.GetInt("level", 1);
+        set => PlayerPrefs.SetInt("level", value);
     }
 }
