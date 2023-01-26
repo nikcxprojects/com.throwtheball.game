@@ -31,4 +31,16 @@ public static class StatsUtility
         get => PlayerPrefs.GetFloat("levelprogress", 0);
         set => PlayerPrefs.SetFloat("levelprogress", value);
     }
+
+    public static int Skins
+    {
+        get => PlayerPrefs.GetInt("skins", 0);
+        set => PlayerPrefs.SetInt("skins", value);
+    }
+
+    public static float SkinProgress
+    {
+        get => PlayerPrefs.GetFloat("skinprogress", 0);
+        set => PlayerPrefs.SetFloat("skinprogress", value);
+    }
 }

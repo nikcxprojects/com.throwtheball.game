@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -36,10 +37,11 @@ public class GameManager : MonoBehaviour
         int value = distance < 0.2f ? 2 : 1;
         if(value > 1)
         {
-            Destroy(Instantiate(Resources.Load<GameObject>("nice"), null), 1.0f);
+            StartCoroutine(nameof(ShowMessage));
         }
 
         Progress.Instance.UpdateProgress(value);
+        SkinProgress.Instance.UpdateProgress(value);
 
         StatsUtility.Score += value;
         scoreText.text = $"{StatsUtility.Score}";
@@ -65,5 +67,11 @@ public class GameManager : MonoBehaviour
 
         game.SetActive(true);
         menu.SetActive(false);
+    }
+
+    private IEnumerable ShowMessage()
+    {
+        yield return new WaitForSeconds(Random.Range(0.2f, 0.75f));
+        Destroy(Instantiate(Resources.Load<GameObject>("nice"), null), 1.0f);
     }
 }

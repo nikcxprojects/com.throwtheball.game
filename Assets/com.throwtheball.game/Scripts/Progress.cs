@@ -1,4 +1,5 @@
 using UnityEngine.UI;
+using System.Collections;
 using UnityEngine;
 
 public class Progress : MonoBehaviour
@@ -34,7 +35,14 @@ public class Progress : MonoBehaviour
             currentLevelCount.text = $"{StatsUtility.Level}";
             nextLevelCount.text = $"{StatsUtility.Level + 1}";
 
-            progressImgAmount.fillAmount = StatsUtility.LevelProgress / max; ;
+            progressImgAmount.fillAmount = StatsUtility.LevelProgress / max;
+            StartCoroutine(nameof(ShowMessage));
         }
+    }
+
+    private IEnumerable ShowMessage()
+    {
+        yield return new WaitForSeconds(Random.Range(0.2f, 0.75f));
+        Destroy(Instantiate(Resources.Load<GameObject>("new level"), null), 1.0f);
     }
 }
