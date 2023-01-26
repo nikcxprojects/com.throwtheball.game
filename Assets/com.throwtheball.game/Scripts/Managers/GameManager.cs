@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject menu;
 
     [Space(10)]
+    [SerializeField] GameObject skins;
+
+    [Space(10)]
     [SerializeField] Text scoreText;
 
     private void Awake()
@@ -58,6 +61,8 @@ public class GameManager : MonoBehaviour
 
         game.SetActive(false);
         menu.SetActive(true);
+
+        skins.SetActive(false);
     }
 
     public void OpenGame()
@@ -67,9 +72,16 @@ public class GameManager : MonoBehaviour
 
         game.SetActive(true);
         menu.SetActive(false);
+
+        skins.SetActive(false);
     }
 
-    private IEnumerable ShowMessage()
+    public void OpenSkins(bool IsOpened)
+    {
+        skins.SetActive(IsOpened);
+    }
+
+    private IEnumerator ShowMessage()
     {
         yield return new WaitForSeconds(Random.Range(0.2f, 0.75f));
         Destroy(Instantiate(Resources.Load<GameObject>("nice"), null), 1.0f);

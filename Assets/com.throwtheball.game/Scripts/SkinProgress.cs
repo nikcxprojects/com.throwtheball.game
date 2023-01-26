@@ -29,7 +29,7 @@ public class SkinProgress : MonoBehaviour
         }
     }
 
-    private IEnumerable ShowMessage()
+    private IEnumerator ShowMessage()
     {
         yield return new WaitForSeconds(Random.Range(0.2f, 0.75f));
         Destroy(Instantiate(Resources.Load<GameObject>("new skin"), null), 1.0f);

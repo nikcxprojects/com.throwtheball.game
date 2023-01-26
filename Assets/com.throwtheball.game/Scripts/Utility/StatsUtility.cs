@@ -43,4 +43,10 @@ public static class StatsUtility
         get => PlayerPrefs.GetFloat("skinprogress", 0);
         set => PlayerPrefs.SetFloat("skinprogress", value);
     }
+
+    public static int CurrentBall
+    {
+        get => PlayerPrefs.GetInt("currentball", 0);
+        set => PlayerPrefs.SetInt("currentball", value);
+    }
 }
