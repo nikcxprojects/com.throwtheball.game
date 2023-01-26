@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Level : MonoBehaviour
 {
@@ -43,5 +44,19 @@ public class Level : MonoBehaviour
         fixedJoint.connectedBody = null;
 
         pivot.SetActive(false);
+        StartCoroutine(nameof(ClearMe));
+    }
+
+    private IEnumerator ClearMe()
+    {
+        yield return new WaitForSeconds(1.75f);
+        while (transform.position.y > -3.0f)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, Vector2.down * 3.0f, 10.0f * Time.deltaTime);
+            yield return null;
+        }
+
+        GameManager.Instance.InitLevel();
+        Destroy(gameObject);
     }
 }

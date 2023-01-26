@@ -8,11 +8,14 @@ public class GameManager : MonoBehaviour
     private Transform Parent { get; set; }
 
     [SerializeField] GameObject game;
+    [SerializeField] GameObject menu;
 
     private void Awake()
     {
         LevelPrefab = Resources.Load<GameObject>("level");
         Parent = GameObject.Find("Environment").transform;
+
+        OpenMenu();
     }
 
     public void InitLevel()
@@ -20,12 +23,29 @@ public class GameManager : MonoBehaviour
         Instantiate(LevelPrefab, Parent);
         if(!game.activeSelf)
         {
-            game.SetActive(true);
+            OpenGame();
         }
     }
 
     public void CheckResult(float distance)
     {
 
+    }
+
+    public void OpenMenu()
+    {
+        if (FindObjectOfType<Level>())
+        {
+            Destroy(FindObjectOfType<Level>().gameObject);
+        }
+
+        game.SetActive(false);
+        menu.SetActive(true);
+    }
+
+    public void OpenGame()
+    {
+        game.SetActive(true);
+        menu.SetActive(false);
     }
 }
