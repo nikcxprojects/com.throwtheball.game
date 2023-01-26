@@ -9,10 +9,12 @@ public class Level : MonoBehaviour
 
     [SerializeField] FixedJoint2D fixedJoint;
     [SerializeField] GameObject pivot;
+    [SerializeField] GameObject basket;
 
     private void Start()
     {
         transform.position = new Vector3(0, 13.0f);
+        basket.transform.localPosition = new Vector2(Random.Range(-1.0f, 1.0f), -3.29f);
     }
 
     private void Update()
