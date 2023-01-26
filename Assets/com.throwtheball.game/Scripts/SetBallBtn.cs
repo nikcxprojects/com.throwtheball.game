@@ -11,6 +11,7 @@ public class SetBallBtn : MonoBehaviour
         btn.onClick.AddListener(() =>
         {
             StatsUtility.CurrentBall = transform.parent.GetSiblingIndex();
+            GameManager.Instance.arrow.position = new Vector2(btn.transform.position.x, btn.transform.position.y - 0.5f);
         });
     }
 

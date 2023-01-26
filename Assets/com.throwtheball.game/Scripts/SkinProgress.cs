@@ -7,7 +7,7 @@ public class SkinProgress : MonoBehaviour
     public static SkinProgress Instance { get=> FindObjectOfType<SkinProgress>(); }
 
     [SerializeField] Image progressAmount;
-    private const float max = 5;
+    private const float max = 100;
 
     private void OnEnable()
     {

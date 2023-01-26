@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
 
     [Space(10)]
     [SerializeField] GameObject skins;
+    [SerializeField] Transform rootSkins;
+    public Transform arrow;
 
     [Space(10)]
     [SerializeField] Text scoreText;
@@ -24,6 +26,12 @@ public class GameManager : MonoBehaviour
         Parent = GameObject.Find("Environment").transform;
 
         OpenMenu();
+    }
+
+    private void Start()
+    {
+        Transform skin = rootSkins.GetChild(StatsUtility.CurrentBall);
+        arrow.position = new Vector2(skin.position.x, skin.position.y - 0.5f);
     }
 
     public void InitLevel()

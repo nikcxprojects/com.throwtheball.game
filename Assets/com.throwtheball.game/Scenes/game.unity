@@ -145,7 +145,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &54934656
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3367,8 +3367,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f0e1e585c1e4b8241bbfbe23b5c600c1, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1.29
+  m_Volume: 0.165
+  m_Pitch: 0.85
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -4201,6 +4201,8 @@ MonoBehaviour:
   game: {fileID: 657131160}
   menu: {fileID: 178655888}
   skins: {fileID: 54934655}
+  rootSkins: {fileID: 1720004222}
+  arrow: {fileID: 221928643}
   scoreText: {fileID: 470644702}
 --- !u!1 &1228650165
 GameObject:
