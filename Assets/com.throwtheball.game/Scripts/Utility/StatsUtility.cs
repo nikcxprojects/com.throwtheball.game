@@ -25,4 +25,10 @@ public static class StatsUtility
         get => PlayerPrefs.GetInt("level", 1);
         set => PlayerPrefs.SetInt("level", value);
     }
+
+    public static float LevelProgress
+    {
+        get => PlayerPrefs.GetFloat("levelprogress", 0);
+        set => PlayerPrefs.SetFloat("levelprogress", value);
+    }
 }
