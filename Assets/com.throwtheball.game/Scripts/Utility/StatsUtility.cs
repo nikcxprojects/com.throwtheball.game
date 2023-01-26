@@ -13,7 +13,7 @@ public static class StatsUtility
         get => PlayerPrefs.GetInt("bestscore", 0);
         set
         {
-            if(value > Score)
+            if(value > BestScore)
             {
                 PlayerPrefs.SetInt("bestscore", value);
             }

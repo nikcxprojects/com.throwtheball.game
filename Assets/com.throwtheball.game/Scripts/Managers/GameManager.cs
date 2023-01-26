@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject game;
     [SerializeField] GameObject menu;
+
+    [Space(10)]
+    [SerializeField] Text scoreText;
 
     private void Awake()
     {
@@ -29,7 +33,12 @@ public class GameManager : MonoBehaviour
 
     public void CheckResult(float distance)
     {
-        Progress.Instance.UpdateProgress(distance < 0.2f ? 2 : 1);
+        int value = distance < 0.2f ? 2 : 1;
+
+        Progress.Instance.UpdateProgress(value);
+
+        StatsUtility.Score += value;
+        scoreText.text = $"{StatsUtility.Score}";
     }
 
     public void OpenMenu()
@@ -39,12 +48,17 @@ public class GameManager : MonoBehaviour
             Destroy(FindObjectOfType<Level>().gameObject);
         }
 
+        StatsUtility.BestScore = StatsUtility.Score;
+
         game.SetActive(false);
         menu.SetActive(true);
     }
 
     public void OpenGame()
     {
+        StatsUtility.Score = 0;
+        scoreText.text = $"{StatsUtility.Score}";
+
         game.SetActive(true);
         menu.SetActive(false);
     }
