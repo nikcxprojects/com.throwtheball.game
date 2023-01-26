@@ -211,6 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fixedJoint: {fileID: 3122972912647143450}
+  pivot: {fileID: 3122972912647143455}
 --- !u!1 &3122972912353129272
 GameObject:
   m_ObjectHideFlags: 0

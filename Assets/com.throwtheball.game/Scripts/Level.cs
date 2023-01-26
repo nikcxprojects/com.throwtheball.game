@@ -8,6 +8,7 @@ public class Level : MonoBehaviour
     private const float smoothTime = 0.35f;
 
     [SerializeField] FixedJoint2D fixedJoint;
+    [SerializeField] GameObject pivot;
 
     private void Start()
     {
@@ -35,7 +36,10 @@ public class Level : MonoBehaviour
             return;
         }
 
+        fixedJoint.connectedBody.transform.SetParent(transform);
         fixedJoint.connectedBody.velocity = Vector2.zero;
         fixedJoint.connectedBody = null;
+
+        pivot.SetActive(false);
     }
 }
