@@ -30,11 +30,12 @@ public class Level : MonoBehaviour
 
     public void Cute()
     {
-        if(!IsReady)
+        if(!IsReady || !fixedJoint.connectedBody)
         {
             return;
         }
 
+        fixedJoint.connectedBody.velocity = Vector2.zero;
         fixedJoint.connectedBody = null;
     }
 }

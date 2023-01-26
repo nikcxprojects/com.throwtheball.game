@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     private GameObject LevelPrefab { get; set; }
     private Transform Parent { get; set; }
 
+    [SerializeField] GameObject game;
+
     private void Awake()
     {
         LevelPrefab = Resources.Load<GameObject>("level");
@@ -16,5 +18,14 @@ public class GameManager : MonoBehaviour
     public void InitLevel()
     {
         Instantiate(LevelPrefab, Parent);
+        if(!game.activeSelf)
+        {
+            game.SetActive(true);
+        }
+    }
+
+    public void CheckResult(float distance)
+    {
+
     }
 }
