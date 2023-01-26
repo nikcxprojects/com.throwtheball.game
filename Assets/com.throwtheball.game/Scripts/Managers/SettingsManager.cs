@@ -50,7 +50,7 @@ public class SettingsManager : MonoBehaviour
             string status = sfx.mute ? "Sounds Off" : "Sounds On";
             sfxBtn.transform.GetChild(0).GetComponent<Text>().text = $"{status}";
 
-            sfxIconImg.sprite = loop.mute ? sfxOff : sfxOn;
+            sfxIconImg.sprite = sfx.mute ? sfxOff : sfxOn;
         });
 
         vibroBtn.onClick.AddListener(() =>
@@ -60,7 +60,7 @@ public class SettingsManager : MonoBehaviour
             string status = VibraEnable ? "Vibrations On" : "Vibrations Off";
             vibroBtn.transform.GetChild(0).GetComponent<Text>().text = $"{status}";
 
-            sfxIconImg.sprite = VibraEnable ? vibroOn : vibroOff;
+            vibroIconImg.sprite = VibraEnable ? vibroOn : vibroOff;
         });
 
         soundBtn.onClick.Invoke();
