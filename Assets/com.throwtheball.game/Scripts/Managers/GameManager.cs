@@ -34,6 +34,10 @@ public class GameManager : MonoBehaviour
     public void CheckResult(float distance)
     {
         int value = distance < 0.2f ? 2 : 1;
+        if(value > 1)
+        {
+            Destroy(Instantiate(Resources.Load<GameObject>("nice"), null), 1.0f);
+        }
 
         Progress.Instance.UpdateProgress(value);
 
