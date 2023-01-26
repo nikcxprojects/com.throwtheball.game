@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
 
     public void CheckResult(float distance)
     {
-
+        Progress.Instance.UpdateProgress(distance < 0.2f ? 2 : 1);
     }
 
     public void OpenMenu()

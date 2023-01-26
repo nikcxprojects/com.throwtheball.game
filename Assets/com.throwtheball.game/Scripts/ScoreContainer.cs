@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class ScoreContainer : MonoBehaviour
 {
-    private void Start()
+    private void OnEnable()
     {
         GetComponent<Text>().text = $"{StatsUtility.Score}";
     }

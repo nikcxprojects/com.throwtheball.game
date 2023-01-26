@@ -25,5 +25,16 @@ public class Progress : MonoBehaviour
     {
         StatsUtility.LevelProgress += amount;
         progressImgAmount.fillAmount = StatsUtility.LevelProgress / max;
+
+        if(StatsUtility.LevelProgress >= max)
+        {
+            ++StatsUtility.Level;
+            StatsUtility.LevelProgress = 0;
+
+            currentLevelCount.text = $"{StatsUtility.Level}";
+            nextLevelCount.text = $"{StatsUtility.Level + 1}";
+
+            progressImgAmount.fillAmount = StatsUtility.LevelProgress / max; ;
+        }
     }
 }

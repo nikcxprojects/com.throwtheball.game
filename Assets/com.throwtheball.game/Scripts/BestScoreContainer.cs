@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BestScoreContainer : MonoBehaviour
 {
-    private void Start()
+    private void OnEnable()
     {
         GetComponent<Text>().text = $"{StatsUtility.BestScore}";
     }
